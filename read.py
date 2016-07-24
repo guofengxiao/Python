@@ -16,4 +16,10 @@ Python343
     
     ToDo:
       01. 打包成可执行的文件
+    
+    Do:
+      01. 11:16 2016/7/24
+        from distutils.core import setup
+        import py2exe
+        python setup.py py2exe
   02. reNameByAddPrefix.py
