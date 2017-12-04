@@ -9,7 +9,7 @@ DEBUG = False
 URL = "http://www.trustrobot.cn/"
 global x
 x = 0
-#URL = "http://www.trustrobot.cn/index.php/Index/companyprogress"
+URL = "http://www.sru.jx.cn/"
 
 # 获取网页源码
 def getHtml(url):
@@ -47,7 +47,7 @@ def getImg(html):
     print(imglist)
     for imgurl in imglist:
         try:#图片原地址直接下载
-            urllib.request.urlretrieve(imgurl[0],'images/%s.jpg'%x)
+            urllib.request.urlretrieve(imgurl[0],'D:/fan.yang/githubLocal/Python/Python/python361/urllib/images/%s.jpg'%x)
             x += 1
         except:#图片原地址通过解析需要加上网址第一层域名解析
             print("the first level ExceptError: ",imgurl)
@@ -55,7 +55,7 @@ def getImg(html):
                 priFix = parseURL( URL )
                 imgurlNew = priFix + imgurl[0]
                 print("imgurlNew: ",imgurlNew)
-                urllib.request.urlretrieve(imgurlNew,'images/%s.jpg'%x)
+                urllib.request.urlretrieve(imgurlNew,'D:/fan.yang/githubLocal/Python/Python/python361/urllib/images/%s.jpg'%x)
                 x += 1
             except:
                 print("the second level ExceptError: ",imgurl)
@@ -72,7 +72,7 @@ def getImgRromURLLinks( html ):
 
 # 从单个页面出发
 def getURLLinks( html ):
-    htmlLinkStr = r'(?<=href=\").*?(?=\")|(?<=href=\').*?(?=\')'#正则表达式扩展表示法
+    htmlLinkStr = r'(?<=href=\").*?(?=\")|(?<=href=\').*?(?=\')'#正则表达式扩展表示法(?<=  
     htmlLinkReg = re.compile(htmlLinkStr)
     pageLinks = re.findall(htmlLinkReg,html)
     result = []
@@ -93,6 +93,7 @@ def getURLLinks( html ):
     return result
     pass
 
+# 同一个网站有相同的 第一级 域名
 def samePreFix( link ):
     if len(link) < len( URL ):
         return False
