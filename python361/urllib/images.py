@@ -6,7 +6,7 @@ import chardet #编码检测包
 
 DEBUG = False
 ResourseSuffix = ["css","ico","js"]
-htmlSuffix = ["html","htm","php"]
+htmlSuffix = ["shtml","html","htm","php"]
 
 
 URL = "http://www.trustrobot.cn/"
@@ -18,7 +18,8 @@ x = 0
 global webLinks
 webLinks = []
 URL = "http://www.sru.jx.cn/"
-
+URL = "http://mindhacks.cn/"
+#URL = "http://www.trustrobot.cn/"
 # 获取网页源码
 def getHtml(url):
     try:
