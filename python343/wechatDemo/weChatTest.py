@@ -1,5 +1,4 @@
 import pyautogui
-import pyautogui
 import autopy
 import time
 import os
@@ -8,8 +7,8 @@ import xlwings as xw
 
 # 自动发信息（读取Excel里面对象和内容，查找）
 # 设置安全区域
-# 名字不匹配 容易出错。需要在查找名字后，有进一步判断。 ToDo
-# 发错位置 名字没对上。然后是教科学院怎么未发名单里面。 ToDo
+# 名字不匹配 容易出错。需要在查找名字后，有进一步判断。 Done
+# 发错位置 名字没对上。然后是教科学院怎么未发名单里面。 Done
 
 messageExlPath = r"C:\Users\71522\Desktop\gtihubLocal\Python\python343\wechatDemo\messages.xlsx"
 headImgPath = r"C:\Users\71522\Desktop\gtihubLocal\Python\python343\wechatDemo\imgs\weChat_Head_dell.png"
@@ -111,7 +110,7 @@ else:
     print("hean not found.")
     quit()
 #yangfanWeChat.sendMessage("文件传输助手","测试") #单独发送信息
-#saveFriendsImgs(ImgLoc)
+#saveFriendsImgs(ImgLoc)# 第一次运行，需要运行该语句
 messageList = readMessageFromExls(messageExlPath)
 if messageList != []:
     yangfanWeChat.sendExlsMessage(messageList)
